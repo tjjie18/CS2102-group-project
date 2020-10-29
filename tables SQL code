@@ -8,3 +8,13 @@ CREATE TABLE pays (
   pet_type VARCHAR PRIMARY KEY,
   price INTEGER NOT NULL
 );
+
+CREATE TABLE transinvolved_in (
+	bid_no		INTEGER,
+	status		VARCHAR,
+	trans_mtd	VARCHAR,
+	pay_mtd		VARCHAR,
+	rating		VARCHAR,
+	FOREIGN KEY (bid_no) REFERENCES bids_for(bid_no) ON DELETE cascade,
+	PRIMARY KEY (bid_no)
+);
